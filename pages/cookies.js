@@ -1,10 +1,10 @@
 const {I} = inject();
 module.exports = {  
-    cookies: '#cookie-modal',
     okButton: '.cookie-agree__button.btn-green.js-coockie-agree',
+    header: '.header',
 
-    closedVodal() {
-        I.see(this.cookies);
+    closedModal() {
+        I.waitForElement(this.header);
         I.click(this.okButton);
     }
 }
