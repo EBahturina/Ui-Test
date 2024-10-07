@@ -4,7 +4,11 @@ import config from "../playwright.config";
 export class MainPage {
     readonly page: Page;
     private readonly catalog: Locator;
-    private readonly logo: Locator;
+    private readonly block_2: Locator;
+    private readonly block_3: Locator;
+    private readonly block_4: Locator;
+    private readonly block_5: Locator;
+    private readonly block_6: Locator;
     private readonly block: Locator;
     private readonly bunner: Locator;
     private readonly product: Locator;
@@ -19,9 +23,13 @@ export class MainPage {
     constructor(page: Page) {
         this.page = page;
         this.catalog = page.locator('a[href="/im-velovitrina#katalog"]').first();
-        this.logo = page.locator('.header-logo.col-md-3');
-        this.block = page.locator('.card.border-primary.border-2');
-        this.bunner = page.locator('.mb-4').first();
+        this.block_2 = page.getByRole('heading', { name: 'Бренды' });
+        this.block_3 = page.getByRole('heading', { name: 'Специальные предложения' });
+        this.block_4 = page.getByRole('heading', { name: 'Новости' }).getByRole('link');
+        this.block_5 = page.getByRole('link', { name: 'Полезная информация' });
+        this.block_6 = page.getByRole('heading', { name: 'ТРЕБУЕТСЯ ПОМОЩЬ?' });
+        this.block = page.getByRole('heading', { name: 'Самое популярное' });
+        this.bunner = page.getByRole('banner').getByRole('img', { name: 'Федеральный интернет-магазин' });
         this.link = page.locator('a.treeview-handler').first();
         this.product = page.locator('#tree-category-499 a');
         this.title = page.locator('div.mb-4 h1');
@@ -37,9 +45,13 @@ export class MainPage {
       }
 
     async visibleElement() {
-        await expect(this.bunner).toBeVisible();
-        await expect(this.logo).toBeVisible();
-        await expect(this.block).toBeVisible();
+      await this.bunner.isVisible();
+      await this.block.isVisible();
+      await this.block_2.isVisible();
+      await this.block_3.isVisible();
+      await this.block_4.isVisible();
+      await this.block_5.isVisible();
+      await this.block_6.isVisible();
       }
 
     async preOrder() {
