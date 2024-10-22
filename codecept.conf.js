@@ -24,14 +24,17 @@ exports.config = {
   },
   include: {
     I: './steps_file.js',
-    loginDataPage: './data/loginData.js',
-    loginPage: './pages/login.js',
-    cookiesPage: './pages/cookies.js',
-    openPersonalPage: "./pages/openPersonal.js",
-    addProductPage: "./pages/addProduct.js",
-    choiceServicesPage: "./pages/choiceServices.js",
-
-    deliveryPage: "./pages/delivery.js",
+    catalogPage: "./pages/catalog.js",
+    cookiesPage: "./pages/cookies.js",
+    productionPage: "./pages/production.js",
+    brandPage: "./pages/brand.js",
+    servicePage: "./pages/service.js",
+    hrPage: "./pages/hr.js",
+    mainPage: "./pages/main.js",
+    supportPage: "./pages/support.js",
+    cooperationPage: "./pages/cooperation.js",
+    contactsPage: "./pages/contacts.js",
+    newsPage: "./pages/news.js",
   },
   name: 'Ui_test'
 }

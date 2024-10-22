@@ -1,10 +1,11 @@
 const {I} = inject();
+
 module.exports = {  
-    okButton: '.cookie-agree__button.btn-green.js-coockie-agree',
-    header: '.header',
+    okButton: '[data-locator="cookieNotify__ok"]',
+    cookiesSection: 'div[data-locator="cookieNotify"]',
 
     closedModal() {
-        I.waitForElement(this.header);
+        I.waitForElement(this.cookiesSection);
         I.click(this.okButton);
     }
 }

@@ -1,46 +1,75 @@
 
 
 Feature('exploring');
-
-Scenario('failAvtorization',  ({ I, loginPage, loginDataPage, cookiesPage, openPersonalPage}) => {
+Scenario('Главная страница',  ({ I,cookiesPage, mainPage}) => {
     I.openSite();
+    I.wait(20);
     cookiesPage.closedModal();
-    openPersonalPage.openPersonalLink();
-    loginPage.fillLogin(loginDataPage.falseUser);
-    loginPage.tryLogin();
-    I.see('Неверный логин или пароль.', loginPage.errorMessage);
-
+    mainPage.infoPage();
 });
 
-Scenario('emptyNameAvtorization',  ({ I, loginPage, loginDataPage, cookiesPage, openPersonalPage}) => {
+Scenario('Страница Каталога',  ({ I,cookiesPage, catalogPage}) => {
     I.openSite();
+    I.wait(20);
     cookiesPage.closedModal();
-    openPersonalPage.openPersonalLink();
-    loginPage.fillLogin(loginDataPage.emptyNameUser);
-    loginPage.tryLogin();
-    I.see('Неверный логин или пароль.', loginPage.errorMessage);
-   
+    catalogPage.infoPage();
 });
 
-Scenario('emptyPasswordAvtorization',  ({ I, loginPage, loginDataPage, cookiesPage, openPersonalPage}) => {
+Scenario('Страница Производство',  ({ I,cookiesPage, productionPage}) => {
     I.openSite();
+    I.wait(20);
     cookiesPage.closedModal();
-    openPersonalPage.openPersonalLink();
-    loginPage.fillLogin(loginDataPage.emptyPasswordUser);
-    loginPage.tryLogin();
-    I.see('Неверный логин или пароль.', loginPage.errorMessage);
-    
-});
-Scenario('addProductInCart',  ({ I, cookiesPage, addProductPage}) => {
-    I.openSite();
-    cookiesPage.closedModal();
-    addProductPage.addProduct();
-    I.see('ОФОРМЛЕНИЕ ЗАКАЗА', addProductPage.title); 
+    productionPage.infoPage();
 });
 
-Scenario('choiceService',  ({ I, cookiesPage, choiceServicesPage}) => {
+Scenario('Страница Бренды',  ({ I,cookiesPage, brandPage}) => {
     I.openSite();
+    I.wait(20);
     cookiesPage.closedModal();
-    choiceServicesPage.serviceChoice();
-    I.see('БЫТОВОЕ И ПОЛУПРОМЫШЛЕННОЕ КОНДИЦИОНИРОВАНИЕ', choiceServicesPage.title); 
+    brandPage.infoPage();
 });
+
+Scenario('Страница Сервис',  ({ I,cookiesPage, servicePage}) => {
+    I.openSite();
+    I.wait(20);
+    cookiesPage.closedModal();
+    servicePage.infoPage();
+});
+
+Scenario('Страница Карьера',  ({ I,cookiesPage, hrPage}) => {
+    I.openSite();
+    I.wait(20);
+    cookiesPage.closedModal();
+    hrPage.infoPage();
+});
+
+Scenario('Страница Поддержка',  ({ I,cookiesPage, supportPage}) => {
+    I.openSite();
+    I.wait(20);
+    cookiesPage.closedModal();
+    supportPage.infoPage();
+});
+
+Scenario('Страница Сотрудничество',  ({ I,cookiesPage, cooperationPage}) => {
+    I.openSite();
+    I.wait(20);
+    cookiesPage.closedModal();
+    cooperationPage.infoPage();
+});
+
+Scenario('Страница Контакты',  ({ I,cookiesPage, contactsPage}) => {
+    I.openSite();
+    I.wait(20);
+    cookiesPage.closedModal();
+    contactsPage.infoPage();
+});
+
+Scenario('Страница Новости',  ({ I,cookiesPage, newsPage}) => {
+    I.openSite();
+    I.wait(20);
+    cookiesPage.closedModal();
+    newsPage.infoPage();
+});
+
+
+
